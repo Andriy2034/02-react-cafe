@@ -1,16 +1,32 @@
-
-import css from './styles/VoteStats.module.css'
-
-function VoteStats () {
+import css from "./VoteStats.module.css";
+import type { Votes} from "../../types/votes.tsx";
 
 
-    // return (
-    //     <div className={css.voteStats}>
-    //         <p>Option 1: {voteStats.option1}</p>
-    //         <p>Option 2: {voteStats.option2}</p>
-    //         <p>Option 3: {voteStats.option3}</p>
-    //     </div>
-    // );
+interface VoteStatsProps {
+    votes: Votes;
+    totalVotes: number;
+    positiveRate: number;
 }
 
-export default VoteStats;
+export default function VoteStats({ votes, totalVotes, positiveRate }: VoteStatsProps) {
+  return (
+    <div className={css.container}>
+      <p className={css.stat}>
+        Good: <strong>{votes.good}</strong>
+      </p>
+      <p className={css.stat}>
+        Neutral: <strong>{votes.neutral}</strong>
+      </p>
+      <p className={css.stat}>
+        Bad: <strong>{votes.bad}</strong>
+      </p>
+      <p className={css.stat}>
+        Total: <strong>{totalVotes}</strong>
+      </p>
+      <p className={css.stat}>
+        Positive: <strong>{positiveRate}%</strong>
+      </p>
+    </div>
+  );
+}
+

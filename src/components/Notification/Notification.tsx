@@ -1,21 +1,7 @@
+import css from "./Notification.module.css";
 
-import { useState } from 'react';
-import css from './styles/Notification.module.css'
+export default function Notification() {
 
-function Notification () {
-    const [notification, setNotification] = useState({
-        message: "This is a notification",
-        type: "info"
-    });
-
-    return (
-        <div className={css.notification}>
-            <p>{notification.message}</p>
-        </div>
-    );
+  return (<p className={css.message}>No feedback yet</p>);
 }
 
-
-
-
-export default Notification;
