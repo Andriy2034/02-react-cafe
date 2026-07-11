@@ -1,5 +1,6 @@
-import {useState} from 'react'
-import './styles/Notification.module.css'
+
+import { useState } from 'react';
+import css from './styles/Notification.module.css'
 
 function Notification () {
     const [notification, setNotification] = useState({
@@ -8,7 +9,7 @@ function Notification () {
     });
 
     return (
-        <div className={`notification notification-${notification.type}`}>
+        <div className={css.notification}>
             <p>{notification.message}</p>
         </div>
     );
